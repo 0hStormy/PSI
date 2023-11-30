@@ -1,4 +1,4 @@
-# nitromethane.py
+# nitro.py
 
 import json
 import subprocess
