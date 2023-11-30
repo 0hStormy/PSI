@@ -4,7 +4,6 @@
 import os
 import subprocess
 import json
-from termcolor import colored, cprint
 
 # Declare variables
 working = True
@@ -45,7 +44,7 @@ while working:
         working = False
         exit(0)
     
-    command = PATH + command
+    command = 'psi/commands/' + command
     
     
     # Write command to temp file
@@ -61,4 +60,4 @@ while working:
         subprocess.run(["python", command])
 
     else:
-        cprint("Command does not exist", "yellow")
+        print("Command does not exist")

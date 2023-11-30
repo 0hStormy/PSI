@@ -4,7 +4,6 @@
 import os
 import json
 import time
-from termcolor import colored, cprint
 
 # Read config file
 f = open("psi/config.json", "r")
@@ -28,11 +27,11 @@ if argslen == 2:
     if os.path.isdir((args[1])) == True:
         usercwd = (args[1])
     else:
-        cprint("Invalid Directory", "red")
+        print("Invalid Directory")
         exit(1)
 
 if argslen == 1:
-    cprint("No provided directory", "red")
+    print("No provided directory")
 
 configcontents = {
     "welcome_message": welcome_message,

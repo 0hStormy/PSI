@@ -1,7 +1,6 @@
 # lsdir.py
 
 # Packages
-from termcolor import cprint
 import json
 
 # Read config file
@@ -11,4 +10,4 @@ tmp_j = f.read()
 cfginfo = json.loads(tmp_j)
 usercwd = (cfginfo["usercwd"])
 
-cprint("You are in -*" + usercwd, 'light_green')
+print("You are in -*" + usercwd)

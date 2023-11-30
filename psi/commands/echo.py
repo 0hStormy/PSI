@@ -1,7 +1,6 @@
 # echo.py
 
 # Packages
-from termcolor import colored, cprint
 import json
 
 # Read config file
@@ -24,4 +23,4 @@ if argslen >= 2:
     print(echomsg)
        
 else:
-    cprint("Please add a message after echo", "red")
+    print("Please add a message after echo")

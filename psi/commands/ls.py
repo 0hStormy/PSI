@@ -3,7 +3,6 @@
 # Packages
 import os
 import json
-from termcolor import colored, cprint
 
 # Read config file
 f = open("psi/config.json", "r")
@@ -24,7 +23,7 @@ if argslen == 2:
     if os.path.isdir((args[1])) == True:
         usercwd = (args[1])
     else:
-        cprint("Invalid Directory", "red")
+        print("Invalid Directory")
         exit(1)
 
 # Read file names
@@ -32,7 +31,7 @@ filelist = os.listdir(usercwd)
 filelistlength = (len(filelist))
 
 print("")
-cprint("Files in " + usercwd, "yellow")
+print("Files in " + usercwd)
 print("------------------------")
 
 for x in range(filelistlength):
@@ -40,12 +39,12 @@ for x in range(filelistlength):
     
     if '.' in filename:
         if filename.startswith('.'):
-            cprint(filename, 'magenta')
+            print(filename, 'magenta')
         else:
-            cprint(filename, 'light_green')
+            print(filename, 'light_green')
             
     else:
-        cprint(filename, 'light_blue')
+        print(filename, 'light_blue')
         
         
         

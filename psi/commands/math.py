@@ -1,7 +1,6 @@
 # echo.py
 
 # Packages
-from termcolor import colored, cprint
 import json
 
 # Read config file
@@ -22,7 +21,7 @@ argslen = len(argscheck)
 if argslen >= 2:
     echomsg = args.replace(PATH + 'math ', '')
     echomsg = eval(echomsg)
-    cprint(echomsg, 'light_green')
+    print(echomsg)
        
 else:
-    cprint("Missing Args (Please add an equation)", "red")
+    print("Missing Args (Please add an equation)")

@@ -3,7 +3,6 @@
 import json
 import subprocess
 import os
-from termcolor import cprint
 
 # Read config file
 f = open("psi/config.json", "r")
@@ -47,6 +46,6 @@ if argslen == 2:
             subprocess.run(["python", command])
 
         else:
-            cprint("Command does not exist", "yellow")
+            print("Command does not exist")
 
 print("")    
