@@ -21,6 +21,13 @@ welcomemsg = (cfginfo["welcome_message"])
 psiversion = (cfginfo["version"])
 PATH = (cfginfo["path"])
 
+# Read temp file
+with open('psi/psi.temp', 'r') as f:
+    tmp_j = f.read()
+
+    cfginfo = json.loads(tmp_j)
+    CommandCwd = (cfginfo["cwd"])
+
 # Welcome message
 print(welcomemsg)
 print("Licenced under GNU GPL 2.0")
@@ -38,6 +45,7 @@ while working:
     usercwd = (cfginfo["usercwd"])
     
     command = input(usercwd + "$ ")
+    shellCommand = command
     
     #Checks if Exit command
     if command == 'exit':
@@ -60,4 +68,6 @@ while working:
         subprocess.run(["python", command])
 
     else:
-        print("Command does not exist")
+        os.chdir(usercwd)
+        os.system(shellCommand)
+        os.chdir(CommandCwd)
