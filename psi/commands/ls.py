@@ -39,12 +39,12 @@ for x in range(filelistlength):
     
     if '.' in filename:
         if filename.startswith('.'):
-            print(filename, 'magenta')
+            print(filename)
         else:
-            print(filename, 'light_green')
+            print(filename)
             
     else:
-        print(filename, 'light_blue')
+        print(filename)
         
         
         
