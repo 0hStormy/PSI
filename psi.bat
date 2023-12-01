@@ -1,2 +1,0 @@
-py psi.py
-PAUSE
