@@ -11,7 +11,7 @@ import subprocess
 def psi_makecfg():
     configcontents = {
         "welcome_message": "Python Shell Interface (PSI)",
-        "usercwd": os.path.expanduser('~'),
+        "usercwd": os.getcwd(),
         "version": "0.1.0-dev",
         "path": "psi/commands/ psi/extensions",
     }
@@ -30,10 +30,8 @@ def psi_tempfile():
     cfgdump = json.dumps(tmpcontents, indent=4)
     f = open("psi/psi.temp", "w+")
     f.write(cfgdump)
-
-# Checks if config exists
-if not os.path.isfile("psi/config.json"):
-    psi_makecfg()
+    
+psi_makecfg()
 
 # Create tempfile
 psi_tempfile()
