@@ -11,7 +11,7 @@ import subprocess
 def psi_makecfg():
     configcontents = {
         "welcome_message": "Python Shell Interface (PSI)",
-        "usercwd": os.getcwd(),
+        "usercwd": os.path.expanduser('~'),
         "version": "0.1.0-dev",
         "path": "psi/commands/ psi/extensions",
     }
