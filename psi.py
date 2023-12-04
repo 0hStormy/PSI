@@ -14,6 +14,7 @@ def psi_makecfg():
         "usercwd": os.path.expanduser('~'),
         "version": "0.1.0-dev",
         "path": "psi/commands/ psi/extensions",
+        "non_psi_cmds": False,
     }
 
     cfgdump = json.dumps(configcontents, indent=4)
@@ -31,7 +32,8 @@ def psi_tempfile():
     f = open("psi/psi.temp", "w+")
     f.write(cfgdump)
     
-psi_makecfg()
+if os.path.isfile('psi/config.json') == False:
+    psi_makecfg()
 
 # Create tempfile
 psi_tempfile()

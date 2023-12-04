@@ -20,6 +20,7 @@ cfginfo = json.loads(tmp_j)
 welcomemsg = (cfginfo["welcome_message"])
 psiversion = (cfginfo["version"])
 PATH = (cfginfo["path"])
+AllowNonPSICMDS = (cfginfo["non_psi_cmds"])
 
 # Read temp file
 with open('psi/psi.temp', 'r') as f:
@@ -68,6 +69,9 @@ while working:
         subprocess.run(["python", command])
 
     else:
-        os.chdir(usercwd)
-        os.system(shellCommand)
-        os.chdir(CommandCwd)
+        if AllowNonPSICMDS == True:
+            os.chdir(usercwd)
+            os.system(shellCommand)
+            os.chdir(CommandCwd)
+        else:
+            print(f"The command {command.replace('psi/commands/', '')} does not seem to exist.")
