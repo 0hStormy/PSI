@@ -30,10 +30,6 @@ if argslen == 2:
 filelist = os.listdir(usercwd)
 filelistlength = (len(filelist))
 
-print("")
-print("Files in " + usercwd)
-print("------------------------")
-
 for x in range(filelistlength):
     filename = (filelist[x])
     
@@ -45,8 +41,3 @@ for x in range(filelistlength):
             
     else:
         print(filename)
-        
-        
-        
-print("------------------------")
-print("")
