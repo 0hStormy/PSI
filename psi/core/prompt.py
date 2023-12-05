@@ -21,6 +21,7 @@ welcomemsg = (cfginfo["welcome_message"])
 psiversion = (cfginfo["version"])
 PATH = (cfginfo["path"])
 AllowNonPSICMDS = (cfginfo["non_psi_cmds"])
+ColorExist = (cfginfo["color"])
 
 # Read temp file
 with open('psi/psi.temp', 'r') as f:
@@ -35,6 +36,19 @@ print("Licenced under GNU GPL 2.0")
 print("Version " + psiversion)
 print("")
 
+# Checks if color is enabled
+if ColorExist == True:
+    from colorama import Fore, Back, Style
+    cBlue = Fore.LIGHTBLUE_EX
+    cGreen = Fore.LIGHTGREEN_EX
+    cRed = Fore.LIGHTRED_EX
+    cNone = Style.RESET_ALL
+else:
+    cBlue = ''
+    cGreen = ''
+    cRed = ''
+    cNone = ''
+        
 # Prompt loop
 while working:
     
@@ -45,7 +59,7 @@ while working:
     cfginfo = json.loads(tmp_j)
     usercwd = (cfginfo["usercwd"])
     
-    command = input(usercwd + "$ ")
+    command = input(f'{cGreen}{usercwd}{cBlue}:{cNone}$ ')
     shellCommand = command
     
     #Checks if Exit command
@@ -74,4 +88,4 @@ while working:
             os.system(shellCommand)
             os.chdir(CommandCwd)
         else:
-            print(f"The command {command.replace('psi/commands/', '')} does not seem to exist.")
+            print(f"{cRed}The command {command.replace('psi/commands/', '')} does not seem to exist.")

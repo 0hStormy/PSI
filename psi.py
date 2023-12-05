@@ -15,6 +15,7 @@ def psi_makecfg():
         "version": "0.1.0-dev",
         "path": "psi/commands/ psi/extensions",
         "non_psi_cmds": False,
+        "color": True,
     }
 
     cfgdump = json.dumps(configcontents, indent=4)
