@@ -13,7 +13,7 @@ def psi_makecfg():
         "welcome_message": "Python Shell Interface (PSI)",
         "usercwd": os.path.expanduser('~'),
         "version": "0.1.0-dev",
-        "path": "psi/commands/ psi/extensions",
+        "path": "psi/commands/",
         "non_psi_cmds": False,
         "color": True,
     }
